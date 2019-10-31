@@ -12,19 +12,52 @@ and open the template in the editor.
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="resources/js/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="resources/css/bootstrap.css" />
+    <link rel="stylesheet" href="resources/css/bootstrap-reboot.min.css" type="text/css">
+
 </head>
 
 <body>
     <div>TODO write content</div>
 
-    <form method="POST" action="./hello">
+    <form  method="POST" action="POST">
         <div class="form-group">
             <label id="labelNome" for="nome">Nome:</label>
             <input class="form-control" type="text" id="nome" name="nome" required />
         </div>
+        
+        <div class="form-group">
+            <label id="labelNome" for="cpf">CPF:</label>
+            <input class="form-control" type="text" id="nome" name="cpf" required />
+        </div>
+        
+        <div class="form-group">
+            <label id="labelNome" for="dataNasc">Data de Nascimento</label>
+            <input class="form-control" type="text" id="nome" name="dataNasc" required />
+        </div>
+        
+        <div class="form-group">
+            <label id="labelNome" for="email">Email:</label>
+            <input class="form-control" type="text" id="nome" name="email" required />
+        </div>
+        
+        <div class="form-group">
+            <label id="labelNome" for="telefone">Telefone:</label>
+            <input class="form-control" type="text" id="nome" name="telefone" required />
+        </div>
+        
+        <div class="form-group">
+            <label id="labelNome" for="genero">Gênero:</label>
+            <input class="form-control" type="text" id="nome" name="genero" required />
+        </div>
+        
+        <div class="form-group">
+            <label id="labelNome" for="endereco">Endereço:</label>
+            <textarea class="form-control" id="nome" name="endereco" required=""> </textarea>
+        </div>
 
         <button id="salvar" class="btn btn-primary" type="submit">Salvar</button>
     </form>
+    
     <script src="bundle.js" charset="utf-8"></script>
 
 </body>
