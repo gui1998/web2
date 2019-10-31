@@ -8,6 +8,7 @@ package servlet;
 import entidades.Cliente;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -18,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author guilh
  */
-@WebServlet(name = "ClienteServlet", urlPatterns = {"/Cliente"})
+@WebServlet(name = "ClienteServlet", urlPatterns = {"/cliente"})
 public class ClienteServlet extends HttpServlet {
 
     /**
@@ -40,7 +41,14 @@ public class ClienteServlet extends HttpServlet {
         c.setTelefone(request.getParameter("telefone"));
         c.setGenero(request.getParameter("genero"));
         c.setEndereco(request.getParameter("endereco"));
-       
+        
+        String dataStr = request.getParameter("dataNasc");
+        try{
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/mm/yyyy");
+            c.setDataNascimento(sdf.parse(dataStr));
+        }catch(Exception erro){
+            
+        }
         
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
@@ -52,6 +60,13 @@ public class ClienteServlet extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet ClienteServlet at " + request.getContextPath() + "</h1>");
+            out.println("Nome: " + c.getNome()+"<br/>");
+            out.println("Cpf: " + c.getCpf()+"<br/>");
+            out.println("E-Mail: " + c.getEmail()+"<br/>");
+            out.println("Telefone: " + c.getTelefone()+"<br/>");
+            out.println("Gênero: " + c.getGenero()+"<br/>");
+            out.println("Endereço: " + c.getEndereco()+"<br/>");
+            out.println("Data de Nascimento: " + c.getDataNascimento()+"<br/>");
             out.println("</body>");
             out.println("</html>");
         }
