@@ -9,6 +9,8 @@ import entidades.Cliente;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -70,6 +72,15 @@ public class ClienteServlet extends HttpServlet {
             out.println("</body>");
             out.println("</html>");
         }
+        
+        List <Cliente> lista = (List<Cliente>)request
+                .getSession()
+                .getAttribute("lista");
+        if (lista==null){
+            lista= new ArrayList<Cliente>();
+        }
+        lista.add((c));
+        request.getSession().setAttribute("lista", lista);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
