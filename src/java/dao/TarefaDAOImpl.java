@@ -12,6 +12,7 @@ public class TarefaDAOImpl implements TarefaDAO {
     private EntityManagerFactory fac
             = Persistence.createEntityManagerFactory("jarewebPU");
     
+    @Override
     public void save(Tarefa tarefa) {
         EntityManager em = fac.createEntityManager();
         em.getTransaction().begin();
@@ -24,6 +25,7 @@ public class TarefaDAOImpl implements TarefaDAO {
         em.close();
     }
     
+    @Override
     public void delete(Tarefa tarefa){
         EntityManager em = fac.createEntityManager();
         em.getTransaction().begin();
@@ -36,11 +38,13 @@ public class TarefaDAOImpl implements TarefaDAO {
         em.close();
     }
     
+    @Override
     public Tarefa find(int id){
         EntityManager em = fac.createEntityManager();
         return em.find(Tarefa.class, id);
     }
     
+    @Override
     public List<Tarefa> list(){
         EntityManager em = fac.createEntityManager();
         Query q = em.createQuery("SELECT t FROM "

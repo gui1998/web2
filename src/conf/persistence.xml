@@ -3,6 +3,7 @@
   <persistence-unit name="jarewebMeuPU" transaction-type="RESOURCE_LOCAL">
     <class>entidades.Cliente</class>
     <class>entidades.Tarefa</class>
+    <class>entidades.Reserva</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/postgres"/>
