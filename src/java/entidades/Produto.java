@@ -11,15 +11,15 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name = "cliente")
-@SequenceGenerator(name="seq_cliente",
-        sequenceName="cliente_id_seq",allocationSize=1)
+@Table(name = "produto")
+@SequenceGenerator(name="seq_produto",
+        sequenceName="produto_id_seq",allocationSize=1)
 
 public class Produto {
     
     @Id
    // @Column(name="nameBanco")
-    @GeneratedValue(generator = "seq_cliente", 
+    @GeneratedValue(generator = "seq_produto", 
             strategy = GenerationType.SEQUENCE)
     private int id;
     private String nome;

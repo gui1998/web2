@@ -1,9 +1,9 @@
 package servlet;
 
 import cdi.DAOQualifier;
-import dao.ClienteDAO;
-import dao.ClienteDAOImpl;
-import entidades.Cliente;
+import dao.MusicaDAO;
+import dao.MusicaDAOImpl;
+import entidades.Musica;
 import java.io.IOException;
 import javax.inject.Inject;
 import javax.servlet.RequestDispatcher;
@@ -13,17 +13,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "ClienteCDIServlet", urlPatterns = {"/clientecdi"})
-public class PedidoCDIServlet extends HttpServlet {
+@WebServlet(name = "MusicaCDIServlet", urlPatterns = {"/musicacdi"})
+public class MusicaCDIServlet extends HttpServlet {
     
     @Inject @DAOQualifier
-    private ClienteDAO dao;
+    private MusicaDAO dao;
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
 
-        Cliente c = new Cliente();
+        Musica c = new Musica();
 
         if (request.getParameter("nome") != null) {
             if(!request.getParameter("id").equals("")){
@@ -31,8 +31,8 @@ public class PedidoCDIServlet extends HttpServlet {
                 c.setId(id);
             }
             c.setNome(request.getParameter("nome"));
-            c.setCpf(request.getParameter("cpf"));
-            c.setTelefone(request.getParameter("telefone"));
+            c.setDuracao(request.getParameter("duracao"));
+            c.setGenero(request.getParameter("genero"));
             dao.save(c);
         } else if (request.getParameter("excluir") != null) {
             int id = Integer.parseInt(request.getParameter("excluir"));
@@ -40,12 +40,12 @@ public class PedidoCDIServlet extends HttpServlet {
         } else if (request.getParameter("editar") != null) {
             int id = Integer.parseInt(request.getParameter("editar"));
 
-            request.setAttribute("cliente", dao.find(id));
+            request.setAttribute("musica", dao.find(id));
         }
 
         request.setAttribute("lista", dao.list());
 
-        RequestDispatcher view = request.getRequestDispatcher("clientecdi.jsp");
+        RequestDispatcher view = request.getRequestDispatcher("musicacdi.jsp");
         view.forward(request, response);
     }
 

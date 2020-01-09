@@ -1,7 +1,7 @@
 package dao;
 
 import cdi.DAOQualifier;
-import entidades.Cliente;
+import entidades.Musica;
 import java.util.List;
 import javax.enterprise.event.Event;
 import javax.inject.Inject;
@@ -10,47 +10,47 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Query;
 
 @DAOQualifier
-public class PedidoDAOImpl implements ClienteDAO {
+public class MusicaDAOImpl implements MusicaDAO {
 
     @Inject
     private EntityManagerFactory fabrica;
     
     @Inject
-    private Event<Cliente> evento;
+    private Event<Musica> evento;
 
-    public void save(Cliente cliente) {
+    public void save(Musica musica) {
         EntityManager em = fabrica.createEntityManager();
         em.getTransaction().begin();
-        System.out.println(cliente.getClass().getSimpleName());
-        if (cliente.getId() > 0) {
-            em.merge(cliente);
+        System.out.println(musica.getClass().getSimpleName());
+        if (musica.getId() > 0) {
+            em.merge(musica);
         } else {
-            em.persist(cliente);
+            em.persist(musica);
         }
         em.getTransaction().commit();
         em.close();
-        evento.fire(cliente);
+        evento.fire(musica);
     }
     
-    public void delete(Cliente cliente){
+    public void delete(Musica musica){
         EntityManager em = fabrica.createEntityManager();
         em.getTransaction().begin();
-        if(!em.contains(cliente)){
-            cliente = em.merge(cliente);
+        if(!em.contains(musica)){
+            musica = em.merge(musica);
         }
-        em.remove(cliente);
+        em.remove(musica);
         em.getTransaction().commit();
         em.close();
     }
     
-    public Cliente find(int id){
+    public Musica find(int id){
         EntityManager em = fabrica.createEntityManager();
-        return em.find(Cliente.class, id);
+        return em.find(Musica.class, id);
     }
     
-    public List<Cliente> list(){
+    public List<Musica> list(){
         EntityManager em = fabrica.createEntityManager();
-        Query q = em.createQuery("SELECT c FROM Cliente c");
+        Query q = em.createQuery("SELECT c FROM Musica c");
         return q.getResultList();
     }
 

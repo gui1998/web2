@@ -11,22 +11,22 @@
         <link rel="stylesheet" type="text/css" href="resources/css/bootstrap.min.css">
     </head>
     <body>
-        <h1>Formulário de Cliente:</h1>       
+        <h1>Formulário de Produto:</h1>       
 
         <div class="container">
-            <form method="POST" action="clientecdi">
-                <input name="id" type="hidden" value="${cliente.id}"/>
+            <form method="POST" action="produtocdi">
+                <input name="id" type="hidden" value="${produto.id}"/>
                 <div class="form-group">
                     <label id="labelNome" for="nome">Nome:</label>
-                    <input id="nome" class="form-control" name="nome" type="text" required  value="${cliente.nome}"/>
+                    <input id="nome" class="form-control" name="nome" type="text" required  value="${produto.nome}"/>
                 </div>
                 <div class="form-group">
                     <label id="labelNome" for="cpf">CPF:</label>
-                    <aux:cpf classe="form-control" id="cpf" nome="cpf" valor="${cliente.cpf}" />
+                    <aux:cpf classe="form-control" id="cpf" nome="cpf" valor="${produto.cpf}" />
                 </div>
                 <div class="form-group">
                     <label id="labelNome" for="telefone">Telefone:</label>
-                    <input id="telefone" class="form-control" name="telefone" type="tel" required value="${cliente.telefone}"/>
+                    <input id="telefone" class="form-control" name="telefone" type="tel" required value="${produto.telefone}"/>
                 </div>
                 <button type="submit" class="btn btn-primary" style="margin-bottom: 16px">Salvar</button>
             </form>
@@ -46,10 +46,10 @@
                             <td>${c.nome}</td>
                             <td>${c.cpf}</td>
                             <td>
-                                <a href="clientecdi?editar=${c.id}">
+                                <a href="produtocdi?editar=${c.id}">
                                     <button class="btn btn-primary">Editar</button>
                                 </a>
-                                <a href="clientecdi?excluir=${c.id}">
+                                <a href="produtocdi?excluir=${c.id}">
                                     <button class="btn btn-danger">Excluir</button>
                                 </a>
                             </td>

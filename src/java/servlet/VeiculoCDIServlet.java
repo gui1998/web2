@@ -1,9 +1,9 @@
 package servlet;
 
 import cdi.DAOQualifier;
-import dao.ClienteDAO;
-import dao.ClienteDAOImpl;
-import entidades.Cliente;
+import dao.VeiculoDAO;
+import dao.VeiculoDAOImpl;
+import entidades.Veiculo;
 import java.io.IOException;
 import javax.inject.Inject;
 import javax.servlet.RequestDispatcher;
@@ -13,17 +13,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "ClienteCDIServlet", urlPatterns = {"/clientecdi"})
+@WebServlet(name = "VeiculoCDIServlet", urlPatterns = {"/veiculocdi"})
 public class VeiculoCDIServlet extends HttpServlet {
     
     @Inject @DAOQualifier
-    private ClienteDAO dao;
+    private VeiculoDAO dao;
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
 
-        Cliente c = new Cliente();
+        Veiculo c = new Veiculo();
 
         if (request.getParameter("nome") != null) {
             if(!request.getParameter("id").equals("")){
@@ -40,12 +40,12 @@ public class VeiculoCDIServlet extends HttpServlet {
         } else if (request.getParameter("editar") != null) {
             int id = Integer.parseInt(request.getParameter("editar"));
 
-            request.setAttribute("cliente", dao.find(id));
+            request.setAttribute("veiculo", dao.find(id));
         }
 
         request.setAttribute("lista", dao.list());
 
-        RequestDispatcher view = request.getRequestDispatcher("clientecdi.jsp");
+        RequestDispatcher view = request.getRequestDispatcher("veiculocdi.jsp");
         view.forward(request, response);
     }
 

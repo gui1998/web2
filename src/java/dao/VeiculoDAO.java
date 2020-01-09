@@ -1,18 +1,18 @@
 
 package dao;
 
-import entidades.Cliente;
+import entidades.Veiculo;
 import java.util.List;
 
 public interface VeiculoDAO {
     
     
-    public void save(Cliente tarefa);
+    public void save(Veiculo veiculo);
 
-    public void delete(Cliente tarefa);
+    public void delete(Veiculo veiculo);
 
-    public Cliente find(int id);
+    public Veiculo find(int id);
 
-    public List<Cliente> list();
+    public List<Veiculo> list();
     
 }

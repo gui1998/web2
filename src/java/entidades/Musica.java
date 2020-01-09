@@ -1,7 +1,5 @@
 package entidades;
 
-import javax.annotation.Generated;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,20 +9,20 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name = "cliente")
-@SequenceGenerator(name="seq_cliente",
-        sequenceName="cliente_id_seq",allocationSize=1)
+@Table(name = "musica")
+@SequenceGenerator(name="seq_musica",
+        sequenceName="musica_id_seq",allocationSize=1)
 
-public class Pedido {
+public class Musica {
     
     @Id
    // @Column(name="nameBanco")
-    @GeneratedValue(generator = "seq_cliente", 
+    @GeneratedValue(generator = "seq_musica", 
             strategy = GenerationType.SEQUENCE)
     private int id;
     private String nome;
-    private String cpf;
-    private String telefone;
+    private String genero;
+    private String duracao;
 
     public int getId() {
         return id;
@@ -42,19 +40,20 @@ public class Pedido {
         this.nome = nome;
     }
 
-    public String getCpf() {
-        return cpf;
+    public String getGenero() {
+        return genero;
     }
 
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
+    public void setGenero(String genero) {
+        this.genero = genero;
     }
 
-    public String getTelefone() {
-        return telefone;
+    public String getDuracao() {
+        return duracao;
     }
 
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
+    public void setDuracao(String duracao) {
+        this.duracao = duracao;
     }
+
 }

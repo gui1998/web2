@@ -11,22 +11,22 @@
         <link rel="stylesheet" type="text/css" href="resources/css/bootstrap.min.css">
     </head>
     <body>
-        <h1>Formulário de Cliente:</h1>       
+        <h1>Formulário de Musica:</h1>       
 
         <div class="container">
-            <form method="POST" action="clientecdi">
-                <input name="id" type="hidden" value="${cliente.id}"/>
+            <form method="POST" action="musicacdi">
+                <input name="id" type="hidden" value="${musica.id}"/>
                 <div class="form-group">
                     <label id="labelNome" for="nome">Nome:</label>
-                    <input id="nome" class="form-control" name="nome" type="text" required  value="${cliente.nome}"/>
+                    <input id="nome" class="form-control" name="nome" type="text" required  value="${musica.nome}"/>
                 </div>
                 <div class="form-group">
-                    <label id="labelNome" for="cpf">CPF:</label>
-                    <aux:cpf classe="form-control" id="cpf" nome="cpf" valor="${cliente.cpf}" />
+                    <label id="labelNome" for="duracao">Duração</label>
+                    <aux:duracao classe="form-control" id="duracao" nome="duracao" valor="${musica.duracao}" />
                 </div>
                 <div class="form-group">
-                    <label id="labelNome" for="telefone">Telefone:</label>
-                    <input id="telefone" class="form-control" name="telefone" type="tel" required value="${cliente.telefone}"/>
+                    <label id="labelNome" for="genero">Gênero</label>
+                    <input id="telefone" class="form-control" type="text" name="genero" required value="${musica.genero}"/>
                 </div>
                 <button type="submit" class="btn btn-primary" style="margin-bottom: 16px">Salvar</button>
             </form>
@@ -36,7 +36,8 @@
                 <thead class="thead-dark">
                     <tr>
                         <th scope="col">Nome</th>
-                        <th scope="col">CPF</th>
+                        <th scope="col">Duração</th>
+                        <th scope="col">Gênero</th>
                         <th scope="col">Ações</th>
                     </tr>
                 </thead>
@@ -44,12 +45,13 @@
                     <c:forEach var="c" items="${lista}"> 
                         <tr>
                             <td>${c.nome}</td>
-                            <td>${c.cpf}</td>
+                            <td>${c.duracao}</td>
+                            <td>${c.genero}</td>
                             <td>
-                                <a href="clientecdi?editar=${c.id}">
+                                <a href="musicacdi?editar=${c.id}">
                                     <button class="btn btn-primary">Editar</button>
                                 </a>
-                                <a href="clientecdi?excluir=${c.id}">
+                                <a href="musicacdi?excluir=${c.id}">
                                     <button class="btn btn-danger">Excluir</button>
                                 </a>
                             </td>
