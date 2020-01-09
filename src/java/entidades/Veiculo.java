@@ -22,9 +22,10 @@ public class Veiculo {
     @GeneratedValue(generator = "seq_veiculo", 
             strategy = GenerationType.SEQUENCE)
     private int id;
-    private String nome;
-    private String cpf;
-    private String telefone;
+    private String placa;
+    private String modelo;
+    private String marca;
+    private String cor;
 
     public int getId() {
         return id;
@@ -34,27 +35,37 @@ public class Veiculo {
         this.id = id;
     }
 
-    public String getNome() {
-        return nome;
+    public String getPlaca() {
+        return placa;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setPlaca(String placa) {
+        this.placa = placa;
     }
 
-    public String getCpf() {
-        return cpf;
+    public String getModelo() {
+        return modelo;
     }
 
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
     }
 
-    public String getTelefone() {
-        return telefone;
+    public String getMarca() {
+        return marca;
     }
 
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
+    public void setMarca(String marca) {
+        this.marca = marca;
     }
+
+    public String getCor() {
+        return cor;
+    }
+
+    public void setCor(String cor) {
+        this.cor = cor;
+    }
+    
+
 }

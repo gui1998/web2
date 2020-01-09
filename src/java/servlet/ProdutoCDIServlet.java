@@ -31,8 +31,9 @@ public class ProdutoCDIServlet extends HttpServlet {
                 c.setId(id);
             }
             c.setNome(request.getParameter("nome"));
-            c.setCpf(request.getParameter("cpf"));
-            c.setTelefone(request.getParameter("telefone"));
+            c.setMedidaPeso(request.getParameter("medidaPeso"));
+            c.setPeso(request.getParameter("peso"));
+            c.setQuantidade(request.getParameter("quantidade"));
             dao.save(c);
         } else if (request.getParameter("excluir") != null) {
             int id = Integer.parseInt(request.getParameter("excluir"));

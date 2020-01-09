@@ -11,22 +11,22 @@
         <link rel="stylesheet" type="text/css" href="resources/css/bootstrap.min.css">
     </head>
     <body>
-        <h1>Formulário de Cliente:</h1>       
+        <h1>Formulário de Veiculo:</h1>       
 
         <div class="container">
-            <form method="POST" action="clientecdi">
-                <input name="id" type="hidden" value="${cliente.id}"/>
+            <form method="POST" action="veiculocdi">
+                <input name="id" type="hidden" value="${veiculo.id}"/>
                 <div class="form-group">
-                    <label id="labelNome" for="nome">Nome:</label>
-                    <input id="nome" class="form-control" name="nome" type="text" required  value="${cliente.nome}"/>
+                    <label id="labelNome" for="modelo">Modelo:</label>
+                    <input id="modelo" class="form-control" name="modelo" type="text" required  value="${veiculo.modelo}"/>
                 </div>
                 <div class="form-group">
-                    <label id="labelNome" for="cpf">CPF:</label>
-                    <aux:cpf classe="form-control" id="cpf" nome="cpf" valor="${cliente.cpf}" />
+                    <label id="labelNome" for="placa">Placa:</label>
+                    <aux:placa classe="form-control" id="placa" nome="placa" valor="${veiculo.placa}" />
                 </div>
                 <div class="form-group">
-                    <label id="labelNome" for="telefone">Telefone:</label>
-                    <input id="telefone" class="form-control" name="telefone" type="tel" required value="${cliente.telefone}"/>
+                    <label id="labelNome" for="telefone">Marca:</label>
+                    <input id="marca" class="form-control" name="marca" type="text" required value="${veiculo.marca}"/>
                 </div>
                 <button type="submit" class="btn btn-primary" style="margin-bottom: 16px">Salvar</button>
             </form>
@@ -35,21 +35,21 @@
             <table class="table">
                 <thead class="thead-dark">
                     <tr>
-                        <th scope="col">Nome</th>
-                        <th scope="col">CPF</th>
+                        <th scope="col">Modelo</th>
+                        <th scope="col">Placa</th>
                         <th scope="col">Ações</th>
                     </tr>
                 </thead>
                 <tbody>
                     <c:forEach var="c" items="${lista}"> 
                         <tr>
-                            <td>${c.nome}</td>
-                            <td>${c.cpf}</td>
+                            <td>${c.modelo}</td>
+                            <td>${c.placa}</td>
                             <td>
-                                <a href="clientecdi?editar=${c.id}">
+                                <a href="veiculocdi?editar=${c.id}">
                                     <button class="btn btn-primary">Editar</button>
                                 </a>
-                                <a href="clientecdi?excluir=${c.id}">
+                                <a href="veiculocdi?excluir=${c.id}">
                                     <button class="btn btn-danger">Excluir</button>
                                 </a>
                             </td>

@@ -1,5 +1,4 @@
 package cdi;
-import entidades.Cliente;
 import javax.enterprise.event.ObservesAsync;
 import javax.enterprise.inject.Produces;
 import javax.persistence.EntityManager;
@@ -20,7 +19,4 @@ public class Utils {
         return fabrica.createEntityManager();
     }
     
-    public void enviarEmail(@ObservesAsync Cliente cliente){
-        System.out.println("Email enviado");
-    }
 }

@@ -26,7 +26,7 @@
                 </div>
                 <div class="form-group">
                     <label id="labelNome" for="genero">Gênero</label>
-                    <input id="telefone" class="form-control" type="text" name="genero" required value="${musica.genero}"/>
+                    <input id="genero" class="form-control" type="text" name="genero" required value="${musica.genero}"/>
                 </div>
                 <button type="submit" class="btn btn-primary" style="margin-bottom: 16px">Salvar</button>
             </form>

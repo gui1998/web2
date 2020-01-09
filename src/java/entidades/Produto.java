@@ -23,8 +23,9 @@ public class Produto {
             strategy = GenerationType.SEQUENCE)
     private int id;
     private String nome;
-    private String cpf;
-    private String telefone;
+    private String quantidade;
+    private String medidaPeso;
+    private String peso;
 
     public int getId() {
         return id;
@@ -42,19 +43,29 @@ public class Produto {
         this.nome = nome;
     }
 
-    public String getCpf() {
-        return cpf;
+    public String getQuantidade() {
+        return quantidade;
     }
 
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
+    public void setQuantidade(String quantidade) {
+        this.quantidade = quantidade;
     }
 
-    public String getTelefone() {
-        return telefone;
+    public String getMedidaPeso() {
+        return medidaPeso;
     }
 
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
+    public void setMedidaPeso(String medidaPeso) {
+        this.medidaPeso = medidaPeso;
     }
+
+    public String getPeso() {
+        return peso;
+    }
+
+    public void setPeso(String peso) {
+        this.peso = peso;
+    }
+
+ 
 }

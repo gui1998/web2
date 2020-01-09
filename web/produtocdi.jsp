@@ -21,12 +21,12 @@
                     <input id="nome" class="form-control" name="nome" type="text" required  value="${produto.nome}"/>
                 </div>
                 <div class="form-group">
-                    <label id="labelNome" for="cpf">CPF:</label>
-                    <aux:cpf classe="form-control" id="cpf" nome="cpf" valor="${produto.cpf}" />
+                    <label id="labelNome" for="peso">Peso em KG:</label>
+                    <aux:peso classe="form-control" id="peso" nome="peso" valor="${produto.peso}" />
                 </div>
                 <div class="form-group">
-                    <label id="labelNome" for="telefone">Telefone:</label>
-                    <input id="telefone" class="form-control" name="telefone" type="tel" required value="${produto.telefone}"/>
+                    <label id="labelNome" for="quantidade">Quantidade:</label>
+                    <input id="quantidade" class="form-control" name="quantidade" required value="${produto.quantidade}"/>
                 </div>
                 <button type="submit" class="btn btn-primary" style="margin-bottom: 16px">Salvar</button>
             </form>
@@ -36,7 +36,7 @@
                 <thead class="thead-dark">
                     <tr>
                         <th scope="col">Nome</th>
-                        <th scope="col">CPF</th>
+                        <th scope="col">Quantidade</th>
                         <th scope="col">Ações</th>
                     </tr>
                 </thead>
@@ -44,7 +44,7 @@
                     <c:forEach var="c" items="${lista}"> 
                         <tr>
                             <td>${c.nome}</td>
-                            <td>${c.cpf}</td>
+                            <td>${c.quantidade}</td>
                             <td>
                                 <a href="produtocdi?editar=${c.id}">
                                     <button class="btn btn-primary">Editar</button>

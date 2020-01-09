@@ -25,14 +25,15 @@ public class VeiculoCDIServlet extends HttpServlet {
 
         Veiculo c = new Veiculo();
 
-        if (request.getParameter("nome") != null) {
+        if (request.getParameter("modelo") != null) {
             if(!request.getParameter("id").equals("")){
                 int id = Integer.parseInt(request.getParameter("id"));
                 c.setId(id);
             }
-            c.setNome(request.getParameter("nome"));
-            c.setCpf(request.getParameter("cpf"));
-            c.setTelefone(request.getParameter("telefone"));
+            c.setPlaca(request.getParameter("placa"));
+            c.setModelo(request.getParameter("modelo"));
+            c.setCor(request.getParameter("cor"));
+            c.setMarca(request.getParameter("marca"));
             dao.save(c);
         } else if (request.getParameter("excluir") != null) {
             int id = Integer.parseInt(request.getParameter("excluir"));

@@ -6,60 +6,76 @@ and open the template in the editor.
 -->
 <html>
 
-<head>
-    <title>TODO supply a title</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="resources/js/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="resources/css/bootstrap.css" />
-    <link rel="stylesheet" href="resources/css/bootstrap-reboot.min.css" type="text/css">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src='resources/js/jquery.min.js'></script>
+        <script src='resources/js/bootstrap.min.js'></script>
+        <link rel="stylesheet" type="text/css" href="resources/css/bootstrap.min.css">
 
-</head>
+    </head>
 
-<body>
-    <div>TODO write content</div>
+    <body>
 
-    <form  method="POST" action="cliente">
-        <div class="form-group">
-            <label id="labelNome" for="nome">Nome:</label>
-            <input class="form-control" type="text" id="nome" name="nome" required />
-        </div>
-        
-        <div class="form-group">
-            <label id="labelNome" for="cpf">CPF:</label>
-            <input class="form-control" type="text" id="nome" name="cpf" required />
-        </div>
-        
-        <div class="form-group">
-            <label id="labelNome" for="dataNasc">Data de Nascimento</label>
-            <input class="form-control" type="text" id="nome" name="dataNasc" required />
-        </div>
-        
-        <div class="form-group">
-            <label id="labelNome" for="email">Email:</label>
-            <input class="form-control" type="text" id="nome" name="email" required />
-        </div>
-        
-        <div class="form-group">
-            <label id="labelNome" for="telefone">Telefone:</label>
-            <input class="form-control" type="text" id="nome" name="telefone" required />
-        </div>
-        
-        <div class="form-group">
-            <label id="labelNome" for="genero">Gênero:</label>
-            <input class="form-control" type="text" id="nome" name="genero" required />
-        </div>
-        
-        <div class="form-group">
-            <label id="labelNome" for="endereco">Endereço:</label>
-            <textarea class="form-control" id="nome" name="endereco" required=""> </textarea>
+        <h1>Bem vindo ao Projeto WEB2</h1>
+        <div class="row">
+
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Cadastro de Reservas</h5>
+                        <a href="./reserva" class="btn btn-primary">Acessar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Cadastro de DoadorJSTL</h5>
+                        <a href="./doadorjstl" class="btn btn-primary">Acessar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Cadastro de VendedorJSTL</h5>
+                        <a href="./vendedorjstl" class="btn btn-primary">Acessar</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                <h5 class="card-title">Cadastro de MusicaCDI</h5>
+                <a href="./musicacdi" class="btn btn-primary">Acessar</a>
+            </div>
+                </div>
+            </div>
+            
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                <h5 class="card-title">Cadastro de ProdutoCDI</h5>
+                <a href="./produtocdi" class="btn btn-primary">Acessar</a>
+            </div>
+                </div>
+            </div>
+            
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                <h5 class="card-title">Cadastro de VeiculoCDI</h5>
+                <a href="./veiculocdi" class="btn btn-primary">Acessar</a>
+            </div>
+                </div>
+            </div>
         </div>
 
-        <button id="salvar" class="btn btn-primary" type="submit">Salvar</button>
-    </form>
-    
-    <script src="bundle.js" charset="utf-8"></script>
-
-</body>
+    </body>
 
 </html>

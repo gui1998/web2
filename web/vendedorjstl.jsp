@@ -28,7 +28,8 @@
 
                 <div class="form-group">
                     <label for="telefone">Telefone</label>
-                    <input class="form-control" type="text" id="telefone" name="telefone" required value="${vendedor.telefone}"/>
+                    <aux:telefone classe="form-control" id="telefone" nome="telefone" 
+                             valor="${vendedor.telefone}" />
                 </div>
 
                 <button id="salvar" class="btn btn-success" type="submit">Salvar</button>
