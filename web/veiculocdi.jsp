@@ -5,7 +5,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>CADASTRO DE VEICULOS</title>
         <script src='resources/js/jquery.min.js'></script>
         <script src='resources/js/bootstrap.min.js'></script>
         <link rel="stylesheet" type="text/css" href="resources/css/bootstrap.min.css">
